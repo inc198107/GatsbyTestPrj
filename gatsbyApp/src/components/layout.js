@@ -1,9 +1,26 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import Footer from './footer';
+
+const layoutContainer=`
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+width: calc(100% - 24px);
+margin : 0 auto;
+justify-content: space-between;
+align-items: center;
+`;
+
+const mainContainer=`
+display: flex;
+width: 100%;
+flex-grow: 1;
+box-sizing: border-box;
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -17,11 +34,11 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <Fragment>
+    <div css={layoutContainer}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <main css={mainContainer}>{children}</main>
       <Footer />
-    </Fragment>
+    </div>
   );
 };
 

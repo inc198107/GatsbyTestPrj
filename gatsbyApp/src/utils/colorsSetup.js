@@ -39,3 +39,8 @@ export const backgrounds = {
   greyGradient50: `linear-gradient(#575757, #000000)`,
   greyGradient1: `linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)`,
 };
+
+export const borders={
+    light: `#d2d2d2`,
+    med: `#00a5a9`,
+}
