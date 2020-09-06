@@ -7,6 +7,11 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Layout from '../components/layout';
 import { textColor, backgrounds, shadows, borders } from '../utils/colorsSetup';
 
+const pageHeadingStyle = `
+text-align: center;
+color: ${textColor.primary};
+`;
+
 const categoryPageMainStyle = `
 display: flex;
 width: 100%;
@@ -75,12 +80,15 @@ export const query = graphql`
 
 export default function CategoryPage({ data }) {
   const articles = data.allContentfulArticle.edges;
+  const pageTitle = articles[0].node.category;
   return (
     <Layout>
       <Helmet>
+        <title>{pageTitle}</title>
         <meta charSet='utf-8' />
       </Helmet>
       <section css={categoryPageMainStyle}>
+        <h1 css={pageHeadingStyle}>{pageTitle}</h1>
         {articles?.map((article) => (
           <article css={articleContainerStyle} key={article.node.title}>
             <div css={imagePartStyle}>
