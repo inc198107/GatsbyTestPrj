@@ -7,7 +7,7 @@ import ImagesBlock from '../components/images-block'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title='Home' />
+    <SEO title='The Mountains home page' />
     <Sidebar/>
     <ImagesBlock/>
   </Layout>

@@ -33,7 +33,7 @@ object-fit: fill;
 const pageHeadingLink = `
   color: ${colors.white};
   text-decoration: none;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-weight: bold;
 `;
 
